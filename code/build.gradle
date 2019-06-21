@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'info.solidsoft.pitest' version '1.4.0'
+}
+
+group 'com.grupo73.proj1'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClassName = 'Application'
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'com.googlecode.lanterna', name: 'lanterna', version: '3.0.1'
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.25.0'
+
+}
+
+pitest {
+    targetClasses = ['com.grupo73.proj1.*']
+}
+

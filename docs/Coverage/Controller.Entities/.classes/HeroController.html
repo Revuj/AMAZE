@@ -1,0 +1,120 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: HeroController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">Controller.Entities</a> ]
+</div>
+
+<h1>Coverage Summary for Class: HeroController (Controller.Entities)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">HeroController</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 10)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package Controller.Entities;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import Controller.CommandInput.Position;
+<i>4</i>&nbsp;import Controller.Controller;
+<i>5</i>&nbsp;import Controller.State.StoppedState;
+<i>6</i>&nbsp;import Model.Entities.HeroModel;
+<i>7</i>&nbsp;import Model.GameModel;
+<i>8</i>&nbsp;import View.Event;
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;import java.io.IOException;
+<i>11</i>&nbsp;
+<b class="nc"><i>12</i>&nbsp;public class HeroController implements Controller&lt;HeroModel&gt; {</b>
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;    @Override
+<i>15</i>&nbsp;    public void consumeEvent(Event event, HeroModel hero) {
+<b class="nc"><i>16</i>&nbsp;        hero.getState().consumeEvent(event, hero);</b>
+<i>17</i>&nbsp;    }
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;    public void move(GameModel model) throws IOException {
+<b class="nc"><i>20</i>&nbsp;        HeroModel hero = model.getHero();</b>
+<i>21</i>&nbsp;
+<b class="nc"><i>22</i>&nbsp;        Position oldPosition =  new Position(hero.getPosition().getX(), hero.getPosition().getY());</b>
+<i>23</i>&nbsp;
+<b class="nc"><i>24</i>&nbsp;        model.getHero().getState().update(model.getHero());</b>
+<i>25</i>&nbsp;
+<b class="nc"><i>26</i>&nbsp;        if (model.getWallsPositions().contains(hero.getPosition())) {</b>
+<b class="nc"><i>27</i>&nbsp;            hero.setPosition(oldPosition);</b>
+<b class="nc"><i>28</i>&nbsp;            hero.setState(new StoppedState());</b>
+<i>29</i>&nbsp;        }
+<i>30</i>&nbsp;
+<b class="nc"><i>31</i>&nbsp;        if (model.getHero().getPosition().equals(model.getExit().getPosition())) {</b>
+<b class="nc"><i>32</i>&nbsp;            model.updateGameModel();</b>
+<i>33</i>&nbsp;        }
+<i>34</i>&nbsp;
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    }
+<i>37</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-05-05 22:14</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: WallView</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">View.Entities</a> ]
+</div>
+
+<h1>Coverage Summary for Class: WallView (View.Entities)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">WallView</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    75%
+  </span>
+  <span class="absValue">
+    (3/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    62.5%
+  </span>
+  <span class="absValue">
+    (5/ 8)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package View.Entities;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import Model.Entities.WallModel;
+<i>4</i>&nbsp;import View.GameView;
+<i>5</i>&nbsp;import com.googlecode.lanterna.TerminalPosition;
+<i>6</i>&nbsp;import com.googlecode.lanterna.TextColor;
+<i>7</i>&nbsp;
+<b class="fc"><i>8</i>&nbsp;public class WallView extends EntityView&lt;WallModel&gt; {</b>
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;
+<b class="fc"><i>11</i>&nbsp;    private final TextColor backgroundColor = new TextColor.RGB(255, 255, 255);</b>
+<b class="fc"><i>12</i>&nbsp;    private final String symbol = &quot; &quot;;</b>
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    @Override
+<i>16</i>&nbsp;    public void draw(WallModel model) {
+<b class="nc"><i>17</i>&nbsp;        GameView.graphics.setBackgroundColor(backgroundColor);</b>
+<b class="nc"><i>18</i>&nbsp;        GameView.graphics.putString(new TerminalPosition(model.getPosition().getX(), model.getPosition().getY()), symbol);</b>
+<b class="nc"><i>19</i>&nbsp;    }</b>
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;    public String getSymbol() {
+<b class="fc"><i>23</i>&nbsp;        return symbol;</b>
+<i>24</i>&nbsp;    }
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;    public TextColor getBackgroundColor() {
+<b class="fc"><i>27</i>&nbsp;        return backgroundColor;</b>
+<i>28</i>&nbsp;    }
+<i>29</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-05-05 22:14</div>
+</div>
+</body>
+</html>
